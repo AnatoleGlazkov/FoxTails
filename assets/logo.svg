@@ -1,0 +1,19 @@
+﻿<svg width="140" height="140" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="fur" x1="20" y1="20" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF9A3C"/>
+      <stop offset="1" stop-color="#FF5E3A"/>
+    </linearGradient>
+  </defs>
+  <circle cx="70" cy="70" r="64" fill="#FFF2D8"/>
+  <path d="M28 54 L12 18 L46 34" fill="url(#fur)"/>
+  <path d="M112 54 L128 18 L94 34" fill="url(#fur)"/>
+  <path d="M28 54 C40 30 100 30 112 54 L104 110 C90 122 50 122 36 110 Z" fill="url(#fur)"/>
+  <path d="M52 82 C60 70 80 70 88 82 C80 92 60 92 52 82 Z" fill="#FFF6EF"/>
+  <circle cx="52" cy="66" r="7" fill="#2A1B0F"/>
+  <circle cx="88" cy="66" r="7" fill="#2A1B0F"/>
+  <circle cx="70" cy="78" r="6" fill="#2A1B0F"/>
+  <path d="M60 92 C66 98 74 98 80 92" stroke="#2A1B0F" stroke-width="4" stroke-linecap="round"/>
+  <path d="M24 56 L38 48" stroke="#FFCC99" stroke-width="6" stroke-linecap="round"/>
+  <path d="M116 56 L102 48" stroke="#FFCC99" stroke-width="6" stroke-linecap="round"/>
+</svg>

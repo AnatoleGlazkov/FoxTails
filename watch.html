@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Смотреть — Лиса</title>
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg">
+    <div class="blob blob-a"></div>
+    <div class="blob blob-b"></div>
+    <div class="blob blob-c"></div>
+  </div>
+
+  <header class="site-header">
+    <div class="brand">
+      <img class="logo" src="assets/logo.svg" alt="Лиса" />
+      <div>
+        <div class="title">Лиса</div>
+        <div class="tagline">Смех, приключения и хвост-вертушка</div>
+      </div>
+    </div>
+    <nav class="top-nav">
+      <a href="index.html">Главная</a>
+      <a href="watch.html" class="active">Сериал</a>
+      <a href="comics.html">Комиксы</a>
+      <a href="gallery.html">Галерея</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Step 1: Seasons -->
+    <section class="panel">
+      <div class="panel-head">
+        <h2>1. Выбери сезон</h2>
+        <p id="seasonHint">Нажми на сезон, чтобы увидеть серии</p>
+      </div>
+      <div class="season-list" id="seasonList"></div>
+    </section>
+
+    <!-- Step 2: Episodes -->
+    <section class="panel">
+      <div class="panel-head">
+        <h2>2. Выбери серию</h2>
+        <p id="episodeHint">Сначала выбери сезон</p>
+      </div>
+      <div class="episode-list" id="episodeList"></div>
+    </section>
+
+    <!-- Step 3: Video Player -->
+    <section id="episode" class="panel video-panel">
+      <div class="panel-head">
+        <h2 id="episodeTitle">Серия не выбрана</h2>
+        <p id="episodeDesc">Выбери сезон и серию выше, чтобы начать просмотр</p>
+      </div>
+
+      <div class="video-wrap">
+        <video id="videoPlayer" controls preload="metadata">
+          Ваш браузер не поддерживает видео.
+        </video>
+      </div>
+
+      <!-- Reactions for this video -->
+      <div class="video-reactions">
+        <h4>Реакции на эту серию:</h4>
+        <div class="reactions-inline" id="reactionBar">
+          <p class="reactions-hint">Выбери серию, чтобы оставить реакцию</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Step 4: Cast -->
+    <section class="panel cast-panel">
+      <div class="panel-head">
+        <h2>Озвучка</h2>
+        <p>Кто озвучивал персонажей в этой серии</p>
+      </div>
+      <ul class="cast-list" id="castList">
+        <li class="cast-empty">Выбери серию, чтобы увидеть актёров озвучки</li>
+      </ul>
+    </section>
+
+    <!-- Step 5: Comments -->
+
+    <!-- Step 6: Comments -->
+    <section class="panel comments-panel">
+      <div class="panel-head">
+        <h2>Комментарии</h2>
+        <p>Обсуждаем серию</p>
+      </div>
+
+      <form id="commentForm" class="comment-form">
+        <input type="text" id="commentName" placeholder="Твоё имя" maxlength="30" required />
+        <textarea id="commentText" placeholder="Напиши комментарий..." maxlength="500" required></textarea>
+        <button type="submit">Отправить</button>
+      </form>
+
+      <div class="moderation">
+        <label class="mod-toggle">
+          <input type="checkbox" id="modToggle" />
+          Я модератор
+        </label>
+        <input type="password" id="modCode" placeholder="Код модератора" />
+        <button id="modEnter" type="button">Войти</button>
+        <div class="mod-note">Код: <span class="pill">LISA-ADMIN</span></div>
+      </div>
+
+      <div class="comment-columns">
+        <div>
+          <h3>Опубликованные</h3>
+          <div id="approvedComments" class="comment-list"></div>
+        </div>
+        <div>
+          <h3>На модерации</h3>
+          <div id="pendingComments" class="comment-list"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>© Лиса — мультсериал</div>
+    <div class="small">Пиши новые серии, а мы сделаем сайт ещё круче.</div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initWatchPage();
+    });
+  </script>
+</body>
+</html>

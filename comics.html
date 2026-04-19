@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Комиксы — Лиса</title>
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg">
+    <div class="blob blob-a"></div>
+    <div class="blob blob-b"></div>
+    <div class="blob blob-c"></div>
+  </div>
+
+  <header class="site-header">
+    <div class="brand">
+      <img class="logo" src="assets/logo.svg" alt="Лиса" />
+      <div>
+        <div class="title">Лиса</div>
+        <div class="tagline">Смех, приключения и хвост-вертушка</div>
+      </div>
+    </div>
+    <nav class="top-nav">
+      <a href="index.html">Главная</a>
+      <a href="watch.html">Сериал</a>
+      <a href="comics.html" class="active">Комиксы</a>
+      <a href="gallery.html">Галерея</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Comics Grid Section -->
+    <section id="comics" class="panel">
+      <div class="panel-head">
+        <h2>Комиксы</h2>
+        <p>Истории в картинках. Открывай и листай!</p>
+      </div>
+      <div class="comics-grid" id="comicsGrid">
+        <!-- Comics will be rendered here -->
+      </div>
+    </section>
+
+    <!-- Selected Comic Info & Actions -->
+    <section id="comicInfo" class="panel comic-info-panel hidden">
+      <div class="comic-info-content">
+        <div class="comic-info-text">
+          <h3 id="selectedComicTitle"></h3>
+          <p id="selectedComicDesc"></p>
+          <button class="read-btn" id="readComicBtn">
+            <span>📖</span> Читать комикс
+          </button>
+        </div>
+
+        <div class="likes-section">
+          <button class="like-btn" id="comicLikeBtn">
+            <span class="like-icon">🧡</span>
+            <span class="like-text">Нравится</span>
+          </button>
+          <span class="like-count" id="comicLikeCount">0</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comments Section -->
+    <section id="comicComments" class="panel comments-panel hidden">
+      <div class="panel-head">
+        <h2>Комментарии к комиксу</h2>
+        <p>Обсуждаем историю</p>
+      </div>
+
+      <form id="comicCommentForm" class="comment-form">
+        <input type="text" id="comicCommentName" placeholder="Твоё имя" maxlength="30" required />
+        <textarea id="comicCommentText" placeholder="Напиши комментарий..." maxlength="500" required></textarea>
+        <button type="submit">Отправить</button>
+      </form>
+
+      <div class="moderation">
+        <label class="mod-toggle">
+          <input type="checkbox" id="comicModToggle" />
+          Я модератор
+        </label>
+        <input type="password" id="comicModCode" placeholder="Код модератора" />
+        <button id="comicModEnter" type="button">Войти</button>
+      </div>
+
+      <div class="comment-columns">
+        <div>
+          <h3>Опубликованные</h3>
+          <div id="comicApprovedComments" class="comment-list"></div>
+        </div>
+        <div>
+          <h3>На модерации</h3>
+          <div id="comicPendingComments" class="comment-list"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>© Лиса — мультсериал</div>
+    <div class="small">Пиши новые серии, а мы сделаем сайт ещё круче.</div>
+  </footer>
+
+  <!-- Comic Reader Modal -->
+  <div id="comicModal" class="comic-modal">
+    <div class="comic-backdrop"></div>
+    <div class="comic-reader">
+      <button class="comic-close" id="comicClose" aria-label="Закрыть"><span>×</span></button>
+
+      <div class="comic-stage">
+        <img id="comicPage" src="" alt="Страница комикса" />
+      </div>
+
+      <div class="comic-nav">
+        <button class="comic-btn comic-prev" id="comicPrev">
+          <span>←</span> Назад
+        </button>
+        <div class="comic-progress">
+          <span id="comicPageNum">1</span> / <span id="comicTotalPages">1</span>
+        </div>
+        <button class="comic-btn comic-next" id="comicNext">
+          Вперёд <span>→</span>
+        </button>
+      </div>
+
+      <div class="comic-hint">
+        Используй стрелки на клавиатуре ← → или тап по краям экрана
+      </div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initComicsPage();
+    });
+  </script>
+</body>
+</html>

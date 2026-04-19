@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Галерея — Лиса</title>
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg">
+    <div class="blob blob-a"></div>
+    <div class="blob blob-b"></div>
+    <div class="blob blob-c"></div>
+  </div>
+
+  <header class="site-header">
+    <div class="brand">
+      <img class="logo" src="assets/logo.svg" alt="Лиса" />
+      <div>
+        <div class="title">Лиса</div>
+        <div class="tagline">Смех, приключения и хвост-вертушка</div>
+      </div>
+    </div>
+    <nav class="top-nav">
+      <a href="index.html">Главная</a>
+      <a href="watch.html">Сериал</a>
+      <a href="comics.html">Комиксы</a>
+      <a href="gallery.html" class="active">Галерея</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Gallery Intro -->
+    <section class="panel hero-panel">
+      <div class="hero-content">
+        <h1>Галерея</h1>
+        <p>Рисунки, арты и творчество фанатов Лисы. Здесь каждая картинка рассказывает свою историю!</p>
+      </div>
+    </section>
+
+    <!-- Filter/Tags -->
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Категории</h2>
+        <p>Фильтруй по интересам</p>
+      </div>
+      <div class="gallery-filters" id="galleryFilters">
+        <button class="filter-btn active" data-filter="all">Все</button>
+        <button class="filter-btn" data-filter="characters">Персонажи</button>
+        <button class="filter-btn" data-filter="scenes">Сцены</button>
+        <button class="filter-btn" data-filter="fanart">Фан-арты</button>
+        <button class="filter-btn" data-filter="sketches">Наброски</button>
+      </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Рисунки</h2>
+        <p>Нажми, чтобы посмотреть в полном размере</p>
+      </div>
+      <div class="gallery-grid" id="galleryGrid">
+        <!-- Gallery items will be rendered here -->
+      </div>
+    </section>
+
+    <!-- Submit Art CTA -->
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Хочешь добавить свою работу?</h2>
+        <p>Присылай свои рисунки — мы добавим их в галерею!</p>
+      </div>
+      <div class="submit-art-cta">
+        <p>📧 Отправляй рисунки на почту: <strong>fox@lisa-cartoon.ru</strong></p>
+        <p class="small">Или свяжись через социальные сети — ссылки в подвале сайта</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>© Лиса — мультсериал</div>
+    <div class="small">Пиши новые серии, а мы сделаем сайт ещё круче.</div>
+  </footer>
+
+  <!-- Gallery Lightbox Modal -->
+  <div id="galleryModal" class="gallery-modal">
+    <div class="gallery-backdrop"></div>
+    <button class="gallery-close" id="galleryClose" aria-label="Закрыть">×</button>
+    <button class="gallery-nav gallery-prev" id="galleryPrev" aria-label="Предыдущее">‹</button>
+    <button class="gallery-nav gallery-next" id="galleryNext" aria-label="Следующее">›</button>
+
+    <div class="gallery-viewer">
+      <img id="galleryImage" src="" alt="" />
+      <div class="gallery-info">
+        <h3 id="galleryTitle"></h3>
+        <p id="galleryDesc"></p>
+        <span class="gallery-tag" id="galleryTag"></span>
+      </div>
+    </div>
+
+    <div class="gallery-counter">
+      <span id="galleryCurrent">1</span> / <span id="galleryTotal">1</span>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initGalleryPage();
+    });
+  </script>
+</body>
+</html>

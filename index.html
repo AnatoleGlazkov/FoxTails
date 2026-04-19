@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Лиса — мультсериал</title>
+  <meta name="description" content="Официальный сайт мультсериала Лиса. Смотри серии, читай комиксы, наслаждайся приключениями!" />
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg">
+    <div class="blob blob-a"></div>
+    <div class="blob blob-b"></div>
+    <div class="blob blob-c"></div>
+  </div>
+
+  <header class="site-header">
+    <div class="brand">
+      <img class="logo" src="assets/logo.svg" alt="Лиса" />
+      <div>
+        <div class="title">Лиса</div>
+        <div class="tagline">Смех, приключения и хвост-вертушка</div>
+      </div>
+    </div>
+    <nav class="top-nav">
+      <a href="index.html" class="active">Главная</a>
+      <a href="watch.html">Сериал</a>
+      <a href="comics.html">Комиксы</a>
+      <a href="gallery.html">Галерея</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-panel">
+      <div class="hero-content">
+        <h1>Привет, дружище!</h1>
+        <p>Добро пожаловать в мир Лисы — где каждый день полон смеха, дружбы и немножечко волшебства!</p>
+        <div class="hero-buttons">
+          <a href="watch.html" class="hero-btn hero-btn-primary">
+            <span>▶</span> Смотреть серии
+          </a>
+          <a href="comics.html" class="hero-btn hero-btn-secondary">
+            <span>📖</span> Читать комиксы
+          </a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="assets/hero-fox.png" alt="Лиса" onerror="this.style.display='none'" />
+      </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="panel news-panel">
+      <div class="panel-head">
+        <h2>Новости</h2>
+        <p>Всё самое свежее из мира Лисы</p>
+      </div>
+      <div class="news-grid" id="newsGrid">
+        <!-- News items will be rendered here -->
+      </div>
+    </section>
+
+    <!-- Popular Content -->
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Популярное</h2>
+        <p>То, что нравится всем</p>
+      </div>
+      <div class="popular-grid">
+        <a href="watch.html" class="popular-card">
+          <div class="popular-icon">🎬</div>
+          <h3>Сериал</h3>
+          <p>2 сезона, 3 серии</p>
+          <span class="popular-btn">Смотреть →</span>
+        </a>
+        <a href="comics.html" class="popular-card">
+          <div class="popular-icon">📚</div>
+          <h3>Комиксы</h3>
+          <p>3 истории в картинках</p>
+          <span class="popular-btn">Читать →</span>
+        </a>
+        <a href="gallery.html" class="popular-card">
+          <div class="popular-icon">🎨</div>
+          <h3>Галерея</h3>
+          <p>Рисунки и арты</p>
+          <span class="popular-btn">Смотреть →</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Latest Comments -->
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Последние комментарии</h2>
+        <p>Что пишут зрители</p>
+      </div>
+      <div class="latest-comments" id="latestComments">
+        <!-- Comments will be loaded here -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>© Лиса — мультсериал</div>
+    <div class="small">Пиши новые серии, а мы сделаем сайт ещё круче.</div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+  <script>
+    // Page-specific initialization
+    document.addEventListener('DOMContentLoaded', () => {
+      renderNews();
+      renderLatestComments();
+    });
+  </script>
+</body>
+</html>
