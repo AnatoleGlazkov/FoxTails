@@ -286,18 +286,6 @@ video {
   box-shadow: 0 8px 16px rgba(255, 122, 26, 0.35);
 }
 
-.moderation {
-  display: grid;
-  gap: 10px;
-  margin-top: 16px;
-  padding: 12px;
-  background: #fff7ef;
-  border-radius: 16px;
-}
-
-.mod-toggle {
-  font-weight: 700;
-}
 
 .pill {
   background: #fff0d6;
@@ -1393,5 +1381,21 @@ video {
 
   .news-grid {
     grid-template-columns: 1fr;
+  }
+
+  .video-panel {
+    padding: 16px;
+  }
+
+  .video-wrap {
+    border-radius: 12px;
+    border-width: 3px;
+  }
+
+  video {
+    aspect-ratio: 16 / 9;
+    max-height: 50vh;
+    object-fit: contain;
+    background: #0e0b10;
   }
 }
